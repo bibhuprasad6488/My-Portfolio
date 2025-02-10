@@ -3075,7 +3075,8 @@ td:last-child {
 .s-header.sticky {
     opacity: 0;
     visibility: hidden;
-    background-color: var(--color-3);
+    /* background-color: var(--color-3); */
+    background-color: #000;
     box-shadow: var(--box-shadow);
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -3100,7 +3101,8 @@ td:last-child {
     height: var(--header-height);
     align-items: center;
     justify-content: space-between;
-    background-color: var(--color-3);
+    /* background-color: var(--color-3); */
+    background-color: #000;
     border: 1px solid rgba(255, 255, 255, 0.03);
     padding: 0 var(--gutter);
     box-shadow: var(--box-shadow);
