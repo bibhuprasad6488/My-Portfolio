@@ -792,18 +792,18 @@
         $(document).ready(function () {
             // alert('Ok');
             console.log('Loading Data...');
-            let url = 'http://192.168.1.51:8005/api/';
-            fetchUsers(url);
+            // let url = 'http://192.168.1.51:8005/api/';
+            // fetchUsers(url);
         });
-        async function fetchUsers(url) {
-            try {
-                let response = await fetch(url + "hello");
-                let data = await response.json();
-                console.log(data);
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
+        // async function fetchUsers(url) {
+        //     try {
+        //         let response = await fetch(url + "hello");
+        //         let data = await response.json();
+        //         console.log(data);
+        //     } catch (error) {
+        //         console.error("Error:", error);
+        //     }
+        // }
 
         // Example AJAX request using jQuery
         // try {
