@@ -330,7 +330,7 @@
             </div>
 
             <div class="row folio-entries" id="projData">
-                
+
 
             </div> <!-- folio entries -->
 
@@ -663,16 +663,16 @@
         //     console.error("Error:", error);
         // }
         fetch('https://softwebtechs.com/portfolio/api/v1/project')
-    .then(response => response.json())
-    .then(result => {
+            .then(response => response.json())
+            .then(result => {
 
-        if (result.status) {
+                if (result.status) {
 
-            let html = '';
+                    let html = '';
 
-            $.each(result.data, function (index, d) {
+                    $.each(result.data, function (index, d) {
 
-                html += `
+                        html += `
                     <div class="column entry">
                         <a href="${d.image}" class="entry__link glightbox"
                             data-glightbox="title: ${d.title}; description: .entry__desc-${d.id}">
@@ -695,17 +695,17 @@
                         </div>
                     </div>
                 `;
+                    });
+
+                    $('#projData').append(html);
+
+                    console.log(result.data);
+                }
+
+            })
+            .catch(error => {
+                console.error('API Error:', error);
             });
-
-            $('#projData').append(html);
-
-            console.log(result.data);
-        }
-
-    })
-    .catch(error => {
-        console.error('API Error:', error);
-    });
     </script>
 </body>
 
