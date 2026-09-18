@@ -663,40 +663,49 @@
         //     console.error("Error:", error);
         // }
         fetch('https://softwebtechs.com/portfolio/api/v1/project')
-            .then(response => response.json())
-            .then(result => {
+    .then(response => response.json())
+    .then(result => {
 
-                if (result.status) {
-                    $.each(result.data, function (d) {
+        if (result.status) {
 
-                        let html = `
-                <div class="column entry">
-                    <a href="${d.image}" class="entry__link glightbox"
-                        data-glightbox="title: ${d.title}; description: .entry__desc-04">
-                        <div class="entry__thumb">
-                            <img src="${d.image}" class="img-fluid" alt>
+            let html = '';
+
+            $.each(result.data, function (index, d) {
+
+                html += `
+                    <div class="column entry">
+                        <a href="${d.image}" class="entry__link glightbox"
+                            data-glightbox="title: ${d.title}; description: .entry__desc-${d.id}">
+
+                            <div class="entry__thumb">
+                                <img src="${d.image}" class="img-fluid" alt="${d.title}">
+                            </div>
+
+                            <div class="entry__info">
+                                <h4 class="entry__title">${d.title}</h4>
+                                <div class="entry__cat"></div>
+                            </div>
+
+                        </a>
+
+                        <div class="glightbox-desc entry__desc-${d.id}">
+                            <p>
+                                ${d.description}
+                            </p>
                         </div>
-                        <div class="entry__info">
-                            <h4 class="entry__title">${d.title}</h4>
-                            <div class="entry__cat"></div>
-                        </div>
-                    </a>
-
-                    <div class="glightbox-desc entry__desc-04">
-                        <p>
-                            ${d.description}
-                        </p>
                     </div>
-                </div>`;
-                    });
-                    $('#projData').append(html);
-                    console.log(result.data);
-                }
-
-            })
-            .catch(error => {
-                console.error('API Error:', error);
+                `;
             });
+
+            $('#projData').append(html);
+
+            console.log(result.data);
+        }
+
+    })
+    .catch(error => {
+        console.error('API Error:', error);
+    });
     </script>
 </body>
 
